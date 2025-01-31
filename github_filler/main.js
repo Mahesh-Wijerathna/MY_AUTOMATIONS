@@ -69,7 +69,7 @@ function myFunction() {
             }
 
                         function commitAndPushChanges() {
-                exec(`cd ${repoDir} && git checkout -b main || git checkout main`, (err, stdout, stderr) => {
+                exec(`cd ${repoDir} && git checkout -b dev || git checkout dev`, (err, stdout, stderr) => {
                     if (err) {
                         console.error(`exec error: ${err}`);
                         return;
@@ -101,7 +101,7 @@ function myFunction() {
                                 console.log(`stdout: ${stdout}`);
                                 console.error(`stderr: ${stderr}`);
             
-                                exec(`cd ${repoDir} && git push --force --set-upstream https://${accessToken}@${repo} main`, (err, stdout, stderr) => {
+                                exec(`cd ${repoDir} && git push --force --set-upstream https://${accessToken}@${repo} dev`, (err, stdout, stderr) => {
                                     if (err) {
                                         console.error(`exec error: ${err}`);
                                         return;
@@ -119,5 +119,5 @@ function myFunction() {
 }
 
 // Call the function to start the process
-// callFunctionAtRandomTimeOncePerDay(myFunction);
-myFunction()
+callFunctionAtRandomTimeOncePerDay(myFunction);
+// myFunction()
